@@ -1,11 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main(){
-    char p; double a, s, r = 0; int b = 0;
-    if (!(cin >> p >> a >> s)) return 0;
-    if (p == 'M') b = 1500, r = (a >= 10 ? .1 : a >= 5 ? .08 : .06);
-    else if (p == 'B') b = 1000, r = (a >= 10 ? .07 : a >= 5 ? .06 : .05);
-    else if (p == 'G') b = 500, r = (a >= 10 ? .06 : a >= 5 ? .05 : .04);
-    else return cout << 0, 0;
-    cout << (long long)(s * r + b);
+    char a; 
+    double b, c; 
+    long long y = 0;
+    double z = 0;
+    if (!(cin >> a >> b >> c)) return 0;
+    a = toupper(a);
+    if (a == 'M') y = 1500;
+    else if (a == 'B') y = 1000;
+    else if (a == 'G') y = 500;
+    else {
+        cout << 0 << endl;
+        return 0;
+    }
+    if (a == 'M') {
+        if (b >= 10) z = 0.10;
+        else if (b >= 5) z = 0.08;
+        else z = 0.06;
+    } 
+    else if (a == 'B') {
+        if (b >= 10) z = 0.07;
+        else if (b >= 5) z = 0.06;
+        else z = 0.05;
+    } 
+    else if (a == 'G') {
+        if (b >= 10) z = 0.06;
+        else if (b >= 5) z = 0.05;
+        else z = 0.04;
+    }
+    long long total_bonus = y + (long long)(c * z);
+    cout << total_bonus << endl;
+
+    return 0;
 }
