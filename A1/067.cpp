@@ -8,5 +8,5 @@ int main(){
     }
     if(a == 'Y' || a == 'y') d=0.95;
     else if(s >= 500) d=0.97;
-    cout << fixed << setprecision(2) << round(s*d*100 + 1e-9)/100;
+    cout << fixed << setprecision(2) << round(s*d*100 + 1e-9)/10;
 }
